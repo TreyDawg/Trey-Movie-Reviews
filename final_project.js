@@ -251,3 +251,7 @@ function collides(shape1, shape2) {
          centerY > yMin &&
          centerY < yMax)
 }
+
+makeImage("https://images-na.ssl-images-amazon.com/images/M/MV5BM2FmZTk5NDUtMzU0Yy00NzgzLWI0Y2MtMjExOWJmMmFlNzk1L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg", 0, 0, 70, 50)
+makeImage("https://upload.wikimedia.org/wikipedia/en/b/b7/The_Mummy_Returns_poster.jpg", 50, 0, 70, 50)
+makeImage("https://upload.wikimedia.org/wikipedia/en/d/df/The_Mummy_-_Tomb_of_the_Dragon_Emperor.jpg",  100, 0, 70, 50)
