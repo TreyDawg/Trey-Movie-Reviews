@@ -101,7 +101,7 @@ function move(shape, dx, dy) {
   }
 }
 
-function makeCircle(cx, cy, r, fill, opacity) {
+function makeCircle(id, cx, cy, r, fill, opacity) {
   var circle = document.createElementNS(namespace, "circle")
   circle.setAttribute("cx", cx)
   circle.setAttribute("cy", cy)
@@ -109,12 +109,12 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(circle)
   return circle
 }
 
-function makeRect(x, y, width, height, fill, opacity) {
+function makeRect(id, x, y, width, height, fill, opacity) {
   var rect = document.createElementNS(namespace, "rect")
   rect.setAttribute("x", x)
   rect.setAttribute("y", y)
@@ -123,12 +123,12 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(rect)
   return rect
 }
 
-function makeEllipse(cx, cy, rx, ry, fill, opacity) {
+function makeEllipse(id, cx, cy, rx, ry, fill, opacity) {
   var ellipse = document.createElementNS(namespace, "ellipse")
   ellipse.setAttribute("cx", cx)
   ellipse.setAttribute("cy", cy)
@@ -137,12 +137,12 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(ellipse)
   return ellipse
 }
 
-function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
+function makeLine(id, x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   var line = document.createElementNS(namespace, "line")
   line.setAttribute("x1", x1)
   line.setAttribute("y1", y1)
@@ -152,12 +152,12 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(line)
   return line
 }
 
-function makePolyline(points, stroke, strokeWidth, opacity) {
+function makePolyline(id, points, stroke, strokeWidth, opacity) {
   var polyline = document.createElementNS(namespace, "polyline")
   polyline.setAttribute("points", points)
   polyline.setAttribute("stroke", stroke)
@@ -165,23 +165,23 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(polyline)
   return polyline
 }
 
-function makePolygon(points, fill, opacity) {
+function makePolygon(id, points, fill, opacity) {
   var polygon = document.createElementNS(namespace, "polygon")
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(polygon)
   return polygon
 }
 
-function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
+function makeText(id, message, x, y, fontSize, fontFamily, fill, opacity) {
   var text = document.createElementNS(namespace, "text")
   text.innerHTML = message
   text.setAttribute("x", x)
@@ -191,12 +191,12 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(text)
   return text
 }
 
-function makeImage(url, x, y, width, height, opacity) {
+function makeImage(id, url, x, y, width, height, opacity) {
   var image = document.createElementNS(namespace, "image")
   image.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", url)
   image.setAttribute("x", x)
@@ -205,7 +205,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
   
-  var canvas = document.getElementById("canvas")
+  var canvas = document.getElementById(id)
   canvas.appendChild(image)
   return image
 }
@@ -252,6 +252,9 @@ function collides(shape1, shape2) {
          centerY < yMax)
 }
 
-makeImage("https://images-na.ssl-images-amazon.com/images/M/MV5BM2FmZTk5NDUtMzU0Yy00NzgzLWI0Y2MtMjExOWJmMmFlNzk1L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg", 0, 0, 70, 50)
-makeImage("https://upload.wikimedia.org/wikipedia/en/b/b7/The_Mummy_Returns_poster.jpg", 50, 0, 70, 50)
-makeImage("https://upload.wikimedia.org/wikipedia/en/d/df/The_Mummy_-_Tomb_of_the_Dragon_Emperor.jpg",  100, 0, 70, 50)
+makeImage("canvas", "https://images-na.ssl-images-amazon.com/images/M/MV5BM2FmZTk5NDUtMzU0Yy00NzgzLWI0Y2MtMjExOWJmMmFlNzk1L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg", 0, 0, 70, 50)
+makeImage("canvas", "https://upload.wikimedia.org/wikipedia/en/b/b7/The_Mummy_Returns_poster.jpg", 50, 0, 70, 50)
+makeImage("canvas", "https://upload.wikimedia.org/wikipedia/en/d/df/The_Mummy_-_Tomb_of_the_Dragon_Emperor.jpg",  100, 0, 70, 50)
+
+makeImage("canvasTwo", "http://static.celebuzz.com/uploads/2015/07/tom-cruise-mission-impossible-run-072815.gif", 0, 0, 30, 30)
+makeImage("canvasTwo", "http://prod.static9.net.au/_/media/2017/02/28/09/00/Ln39oHr.gif", 0, 20, 30, 30)
