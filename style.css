@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Ravi+Prakash');
+body{
+background-color: coral;
+}
+h1{
+font-family:'Ravi Prakash';
+text-align: center;
+}
+
+p{
+font-family: 'Ravi Prakash';
+}
+
+h2{
+font-family: 'Ravi Prakash';
+}
+
+h3{
+font-family: 'Ravi Prakash';
+}
+
+h4{
+font-family: 'Ravi Prakash';
+}
+
+h5{
+font-family: 'Ravi Prakash';
+}
+
+ul{
+font-family: 'Ravi Prakash';
+}

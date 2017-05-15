@@ -256,5 +256,25 @@ makeImage("canvas", "https://images-na.ssl-images-amazon.com/images/M/MV5BM2FmZT
 makeImage("canvas", "https://upload.wikimedia.org/wikipedia/en/b/b7/The_Mummy_Returns_poster.jpg", 50, 0, 70, 50)
 makeImage("canvas", "https://upload.wikimedia.org/wikipedia/en/d/df/The_Mummy_-_Tomb_of_the_Dragon_Emperor.jpg",  100, 0, 70, 50)
 
-makeImage("canvasTwo", "http://static.celebuzz.com/uploads/2015/07/tom-cruise-mission-impossible-run-072815.gif", 0, 0, 30, 30)
-makeImage("canvasTwo", "http://prod.static9.net.au/_/media/2017/02/28/09/00/Ln39oHr.gif", 0, 20, 30, 30)
+var tom = makeImage("canvasTwo", "http://static.celebuzz.com/uploads/2015/07/tom-cruise-mission-impossible-run-072815.gif", 0, 0, 30, 30)
+var fraser = makeImage("canvasTwo", "http://prod.static9.net.au/_/media/2017/02/28/09/00/Ln39oHr.gif", 0, 20, 30, 30)
+var mummy = makeImage("canvasTwo", "http://images2.fanpop.com/image/photos/10500000/Imhotep-The-Mummy-Returns-high-priest-imhotep-10550670-720-480.jpg", 0, 40, 30, 30)
+function moveMummy(){
+var x = getX(tom)    
+move(tom, 0.3, 0)
+if(x > 200){
+setX(tom, 0)
+}
+var mummyx = getX(mummy)
+var origin = getX(fraser)
+move(mummy, 0.1, 0)
+if(mummyx > 200){
+setX(mummy, 0)
+}
+move(fraser, 0.2, 0)
+if(origin > 200){
+setX(fraser, 0)
+}
+requestAnimationFrame(moveMummy)
+}
+
